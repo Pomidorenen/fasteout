@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/main.css'>
+    <script src='script/main.js'></script>
+</head>
+
+<body>
+    <div class="load">
+        fasteout
+    </div>
+    <div class="weathor"></div>
+    <div class="space">
+        fasteout
+    </div>
+    <div class="left">
+        инвентарь
+        <div class="inventory">
+
+        </div>
+    </div>
+    <div class="center">карта мира
+        <div class="map">
+            <div class="leftmap">
+                <div class="space">
+
+                </div>
+                <div class="xx">
+                    <input type="button" id="up" class="v" /> <label for="up" class="button p1" onclick="moveUp()">↑</label>
+                    <br>
+                    <br>
+                    <input type="button" id="left" class="v" onclick="left()" /> <label for="left" class="button" onclick="left()">←</label>
+                    <input type="button" id="right" class="v" onclick="right()" /> <label for="right" class="button" onclick="right()">→</label>
+                    <br>
+                    <br>
+                    <input type="button" id="down" class="v" /> <label for="down" class="button p1" onclick="down()">↓</label>
+                </div>
+                <br>
+                <br>
+                <input type="button" id="take" class="v" /> <label for="take" class="button">🤚</label>
+                <input type="button" id="atack" class="v" /> <label for="atack" class="button">🔪</label>
+                <input type="button" id="dialog" class="v" /> <label for="dialog" class="button">☁</label>
+                <br>
+                <br>
+                <input type="checkbox" id="switch" /> <label for="switch" class="switch">▪</label>
+                <div class="xx1"> визор</div>
+
+                <br>
+                <br>
+                <br>
+                <input type="checkbox" id="pause" /> <label for="pause" class="pause">pause</label>
+                <input type="checkbox" id="next" /> <label for="next" class="pause">next</label>
+                <br>
+                <br>
+                <br>
+                <br>
+
+            </div>
+            <canvas class="rightmap" id="map" width="1000" height="400">
+
+
+    </canvas>
+            <script src='script/main.js'></script>
+        </div>
+    </div>
+    <div class="right">
+        экипировка
+        <div class="inventory">
+
+        </div>
+    </div>
+    <div class="bottom">
+        сообщения
+        <div class="inventory" id="message">
+            ....
+        </div>
+    </div>
+    <script>
+        var x = 0;
+        vary = 0;
+        document.getElementById("map").innerHTML = "";
+        document.getElementById("message").innerHTML = "New text!";
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("../font/pixelcyr_normal.ttf");
+}
+:root {
+  --maincolor: rgb(34, 199, 89);
+  --maincolor2: rgb(41, 155, 79);
+  --corp: rgb(117, 144, 155);
+
+  --plant: rgb(41, 100, 54);
+}
+* {
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+  color: white;
+  animation: bloom 2s linear infinite alternate;
+}
+
+body {
+  background: black;
+}
+.space {
+  width: 100%;
+  height: 3em;
+}
+.left {
+  text-align: center;
+  width: 20%;
+  float: left;
+  /* animation: bloom 10s linear infinite alternate; */
+}
+@keyframes bloom {
+  from {
+    text-shadow: 0px 0px 1em var(--maincolor);
+  }
+  to {
+    text-shadow: 0px 0px 2em var(--maincolor);
+  }
+}
+.right {
+  width: 20%;
+  float: left;
+  text-align: center;
+}
+.center {
+  width: 60%;
+  height: 10em;
+  float: left;
+}
+.inventory {
+  width: 90%;
+  margin-top: 1%;
+  margin-left: 5%;
+  outline: 0.2em solid var(--maincolor);
+  outline-offset: -0.2em;
+
+  height: 30em;
+  background: repeating-linear-gradient(
+    0deg,
+    black 0.5em,
+    var(--maincolor2) 0.7em,
+    var(--maincolor2) 0.69em,
+    black 0.7em,
+    black 2em
+  );
+  background-position: top;
+  animation: 1s bounce-2 infinite linear;
+}
+@keyframes bounce-2 {
+  0% {
+    transform: translateY(0);
+    background-position: top;
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+    background-position: bottom;
+  }
+  0% {
+    background-position: 0 0em;
+  }
+
+  100% {
+    background-position: 0 1.5em;
+  }
+}
+.bottom {
+  width: 60%;
+  margin-left: 20%;
+  height: 20em;
+}
+.load {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  color: azure;
+  font-size: 20vh;
+  text-align: center;
+  animation: 5s mon forwards;
+}
+@keyframes mon {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    height: 100vh;
+  }
+  60% {
+    height: 100vh;
+  }
+  100% {
+    opacity: 0;
+    height: 0vh;
+  }
+}
+.button {
+  background-color: blanchedalmond;
+  color: black;
+  font-size: 1.5em;
+  margin-left: 2em;
+  box-shadow: 0.2em 0 0 0 rgb(0, 0, 0), 0 0.2em 0 0 rgb(0, 0, 0),
+    0 -0.2em 0 0 rgb(0, 0, 0), -0.2em 0 0 0 rgb(0, 0, 0),
+    -0.8em 0 0 0 rgb(189, 171, 145), -1.2em 0 0 0 rgb(0, 0, 0, 0.5),
+    -1.2em 0.2em 0 0 rgb(0, 0, 0, 0.2), -1.2em -0.2em 0 0 rgb(0, 0, 0, 0.2),
+    -0.8em -0.2em 0 0 rgb(3, 3, 3), -0.8em 0.2em 0 0 rgb(3, 3, 3);
+}
+input[type="button"]:active + .button {
+  transition: 0.2s all;
+
+  background-color: rgb(189, 171, 145);
+  text-shadow: 0px 0px 0em red;
+  animation: none;
+  margin-left: 1em;
+  margin-right: 1em;
+  box-shadow: 0.2em 0 0 0 rgb(0, 0, 0), 0 0.2em 0 0 rgb(0, 0, 0),
+    0 -0.2em 0 0 rgb(0, 0, 0), -0.2em 0 0 0 rgb(0, 0, 0),
+    0em 0 0 0 rgb(189, 171, 145), 0em -0.2em 0 0 rgb(3, 3, 3),
+    0em 0.2em 0 0 rgb(3, 3, 3);
+}
+.p1 {
+  margin-left: 3.5em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+input[type="button"]:active + .p1 {
+  margin-left: 2.5em;
+}
+.xx {
+  margin-left: 2.5em;
+}
+.xx1 {
+  margin-left: 4em;
+}
+.map {
+  width: 100%;
+  margin-top: 1em;
+  height: 28em;
+
+  transform: translateX(0.5em);
+  background: var(--corp);
+  box-shadow: -0.2em 0 0 0 rgb(95, 120, 131), 0.2em 0 0 0 rgb(80, 80, 80),
+    0 -0.2em 0 0 rgb(54, 54, 54), 0 0.2em 0 0 rgb(46, 46, 46),
+    -0.5em 0 0 rgb(67, 83, 90), -0.7em 0 0 rgb(46, 46, 46),
+    -0.7em -0.2em 0 rgb(83, 83, 83), -0.7em 0.2em 0 rgb(146, 146, 146);
+}
+.leftmap {
+  float: left;
+  width: 30%;
+  height: 100%;
+}
+.rightmap {
+  float: left;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin: 3em AUTO;
+  width: 60%;
+  height: 70%;
+  background: var(--plant);
+  box-shadow: inset -0.4em 0 0 0 rgb(39, 83, 102),
+    0 0.2em 0 0 rgb(145, 181, 197), 0 -0.2em 0 0 rgb(145, 181, 197),
+    -0.6em 0 0 0 rgb(126, 147, 156), inset 3em 3em 0 0 rgba(0, 0, 0, 0.2),
+    inset -3em -3em 0 0 rgba(0, 0, 0, 0.2),
+    inset 1.5em 1.5em 0 0 rgba(0, 0, 0, 0.2),
+    inset -1.5em -1.5em 0 0 rgba(0, 0, 0, 0.2),
+    inset 0.5em 0.5em 0 0 rgba(0, 0, 0, 0.2),
+    inset -0.5em -0.5em 0 0 rgba(0, 0, 0, 0.2);
+}
+input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+.v {
+  display: none;
+}
+.pause {
+  color: white;
+  background-color: red;
+  text-shadow: 0px 0px 1em red;
+  animation: none;
+  padding: 0.4em;
+  box-shadow: 0.2em 0 0 0 rgb(0, 0, 0), 0 0.2em 0 0 rgb(0, 0, 0),
+    0 -0.2em 0 0 rgb(0, 0, 0), -0.2em 0 0 0 rgb(0, 0, 0),
+    -0.8em 0 0 0 rgb(138, 0, 0), -1.2em 0 0 0 rgb(0, 0, 0, 0.5),
+    -1.2em 0.2em 0 0 rgb(0, 0, 0, 0.2), -1.2em -0.2em 0 0 rgb(0, 0, 0, 0.2),
+    -0.8em -0.2em 0 0 rgb(3, 3, 3), -0.8em 0.2em 0 0 rgb(3, 3, 3);
+
+  margin-left: 3em;
+  transition: 1s all;
+}
+input[type="checkbox"]:checked + .pause {
+  transition: 0.2s all;
+
+  background-color: rgb(112, 7, 7);
+  text-shadow: 0px 0px 0em red;
+  animation: none;
+  margin-left: 2em;
+  margin-right: 1em;
+  padding: 0.3em;
+  box-shadow: 0.2em 0 0 0 rgb(0, 0, 0), 0 0.2em 0 0 rgb(0, 0, 0),
+    0 -0.2em 0 0 rgb(0, 0, 0), -0.2em 0 0 0 rgb(0, 0, 0), 0em 0 0 0 red,
+    0em -0.2em 0 0 rgb(3, 3, 3), 0em 0.2em 0 0 rgb(3, 3, 3);
+}
+
+.switch {
+  color: rgb(184, 184, 184);
+  background-color: rgb(168, 166, 164);
+  box-shadow: 0 0 0em rgb(148, 126, 101), 1em 1em 0em rgb(195, 190, 185),
+    0.8em 0.8em 0em rgb(179, 174, 170), 0.6em 0.6em 0em rgb(105, 103, 101),
+    inset -0.2em 0em rgb(105, 103, 101);
+  animation: none;
+
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  margin-top: 2em;
+  margin-left: 1em;
+  transition: 1s all;
+}
+input[type="checkbox"]:checked + .switch {
+  transition: 0.2s all;
+
+  background-color: rgb(119, 119, 118);
+  box-shadow: 0 0 0em rgb(148, 126, 101), 1em -1em 0em rgb(195, 190, 185),
+    0.8em -0.8em 0em rgb(179, 174, 170), 0.6em -0.6em 0em rgb(105, 103, 101),
+    inset -0.2em 0em rgb(105, 103, 101);
+  animation: none;
+}
+.weathor {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+  /* background-image: url("../image/show.png"), url("../image/sno.png"),
+    url("img/snow2.png");
+  background-size: 30%, 5%, 50%;
+  background-repeat: repeat, repeat-x;
+  animation: snow 1s linear infinite; */
+}
+
+@keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 600px 1200px, 400px 400px, 300px 300px;
+  }
+}
